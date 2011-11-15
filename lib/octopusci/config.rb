@@ -106,4 +106,4 @@ Octopusci::Config.after_load do
 end
 
 # Load the actual config file
-Octopusci::Config.load("/etc/octopusci/config.yml")
+Octopusci::Config.load("#{ENV['HOME']}/.octopusci/config.yml")
