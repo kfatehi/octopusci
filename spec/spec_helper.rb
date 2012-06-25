@@ -1,5 +1,6 @@
 $LOAD_PATH.unshift File.expand_path(File.dirname(__FILE__) + '/../lib')
 require 'octopusci/server'
+require 'octopusci/tentacle'
 require 'rack/test'
 
 Octopusci::Server.set :environment, :test
