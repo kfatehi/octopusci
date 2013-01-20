@@ -93,8 +93,14 @@ Octopusci::Config.after_load do
     :enable_starttls_auto => Octopusci::Config['smtp']['enable_starttls_auto'],
     :user_name => Octopusci::Config['smtp']['user_name'],
     :password => Octopusci::Config['smtp']['password'],
-    :raise_delivery_errors => Octopusci::Config['smtp']['raise_delivery_errors']
+    :raise_delivery_errors => Octopusci::Config['smtp']['raise_delivery_errors'],
   }
+  begin
+    if tls_setting = Octopusci::Config['smtp']['tls']
+      Octopusci::Notifier.smtp_settings['smtp']['tls'] = tls_setting
+    end
+  rescue
+  end
   Octopusci::Notifier.logger = Logger.new(STDOUT)
 
   Dir.open(Octopusci::Config['general']['jobs_path']) do |d|
