@@ -16,9 +16,9 @@ module Octopusci
       else
         @status_str = 'failed'
       end
-            
+
       mail(:to => recip_email, :subject => "Octopusci Build (#{@status_str}) - #{context_str} - #{@job['repo_name']} / #{@job['branch_name']}") do |format|
-        format.html
+        format.html        # format.html rescue binding.pry
       end
     end
   end

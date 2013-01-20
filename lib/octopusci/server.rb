@@ -8,7 +8,7 @@ module Octopusci
     dir = File.dirname(File.expand_path(__FILE__))
     
     set :views, "#{dir}/server/views"
-    set :public_folder, "#{dir}/server/public"
+    set :public_folder, Octopusci.root.join('public').to_s
     set :static, true
     
     helpers do

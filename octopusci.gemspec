@@ -34,5 +34,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rack-test'
   s.add_development_dependency 'guard'
   s.add_development_dependency 'guard-rspec'
-  s.add_development_dependency 'ruby_gntp'
+  s.add_development_dependency 'terminal-notifier-guard'
+  s.add_development_dependency 'pry'
 end
